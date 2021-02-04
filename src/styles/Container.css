@@ -1,0 +1,103 @@
+.Main-conatiner {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 75px;
+
+  font-family: "Roboto", sans-serif;
+}
+.line {
+  width: 100%;
+  border-top: 1px solid #717171;
+}
+
+.Main {
+  min-height: 90vh;
+  max-width: 100vw;
+  min-width: fit-content;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: inherit;
+  color: inherit;
+  transition: all 0.5s ease-in-out;
+}
+
+.output {
+  padding: 20px;
+  background-color: inherit;
+  color: inherit;
+  padding-bottom: 100px;
+}
+
+.output-grid {
+  display: grid;
+  margin: 15px;
+  grid-template-columns: repeat(4, 240px);
+  grid-auto-rows: 50px;
+  grid-auto-flow: dense;
+  align-items: flex-start;
+  justify-content: center;
+  grid-gap: 10px;
+}
+.output-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.output-list h2 {
+  margin-top: 15%;
+  color: #80868b;
+  font-size: 1.375em;
+  font-weight: 400;
+}
+
+.output .note {
+  width: 240px;
+  padding: 10px;
+
+  color: inherit;
+  margin: 16px;
+  border-radius: 8px;
+  border: 1px solid #717171;
+  background-color: inherit;
+}
+.output-list .note {
+  width: 500px;
+}
+.padding-value {
+  padding-left: 250px;
+}
+
+@media screen and (max-width: 1024px) {
+  .Main {
+    padding: 20px 5px;
+  }
+  .padding-value {
+    padding-left: 250px;
+  }
+  .output-grid {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+  .output-grid .note {
+    width: 300px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .padding-value {
+    padding-left: 5px;
+  }
+  .output {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+  }
+  .output .note {
+    width: 100%;
+    margin: 15px auto;
+  }
+}

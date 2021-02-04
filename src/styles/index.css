@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.element:hover:before {
+  content: attr(aria-label);
+  background-color: rgb(60, 63, 67);
+  color: rgb(255, 255, 255, 0.8);
+
+  min-width: max-content;
+
+  position: absolute;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  top: 80%;
+  left: 65%;
+  transform: translate(-50%, 50%);
+    z-index: 84;
+}
+.element:hover {
+  z-index: 83;
+  font-family: "Roboto", sans-serif;
+
+  font-weight: normal;
+
+  font-size: 18px;
+  position: relative;
+}

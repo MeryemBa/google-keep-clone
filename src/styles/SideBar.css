@@ -1,0 +1,76 @@
+.SideBar {
+  height: 100vh;
+  width: 250px;
+  background-color: transparent;
+
+  position: absolute;
+  color: inherit;
+  z-index: -1;
+  padding-left: 0;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  left: 0px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(0);
+}
+.SideBar-info {
+  padding-left: 27px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  color: #e8eaed;
+  line-height: 27px;
+}
+.light .SideBar-info {
+  color: #202124;
+}
+.SideBar .line {
+  margin: 10px 0;
+}
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 55px;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 0% 19% 19% 0% / 100% 100% 100% 52%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  padding-left: 30px;
+}
+.navLink span {
+  margin-right: 15px;
+}
+.activeNavLink {
+  background-color: #41331c;
+}
+.light .activeNavLink {
+  background-color: #feefc3;
+}
+.navLink:hover {
+  background-color: #303236;
+  color: inherit;
+}
+.light .navLink:hover {
+  background-color: #e9eaea;
+}
+
+@media screen and (max-width: 500px) {
+  .SideBar {
+    width: 100%;
+    background-color: inherit;
+
+    left: 0;
+  }
+  .navLink {
+    border-radius: 0;
+
+    font-size: 20px;
+  }
+}

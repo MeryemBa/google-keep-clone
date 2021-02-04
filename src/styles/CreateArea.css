@@ -1,0 +1,56 @@
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: inherit;
+  padding: 9px 15px;
+  border-radius: 7px;
+
+  border: 1px solid #717171;
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+}
+form.create-note button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+@media screen and (max-width: 1024px) {
+  form.create-note {
+    width: 700px;
+    font-size: 1.5rem;
+  }
+  form.create-note input,
+  form.create-note textarea {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 768px) {
+  form.create-note {
+    width: 90%;
+  }
+  form.create-note input,
+  form.create-note textarea {
+    font-size: 16px;
+  }
+}

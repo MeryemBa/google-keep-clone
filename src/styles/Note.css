@@ -1,0 +1,51 @@
+.note {
+  float: left;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+.note h1 {
+  font-size: 17px;
+  margin-bottom: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+.note p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  height: 250px;
+  overflow-y: auto;
+}
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 2px;
+  opacity: 0.87;
+  color: inherit;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  background-color: inherit;
+  opacity: 0;
+}
+.note:hover button {
+  opacity: 1;
+  animation: 0.8s fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,36 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  position: relative;
+}
+.dark {
+  background-color: #202124;
+  color: #fff;
+}
+.light {
+  background-color: #fefefe;
+  color: #202124;
+}
+
+.light .line {
+  border-color: #202124;
+}
+.icon {
+  color: #717171;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon:hover {
+  background-color: #303236;
+  color: inherit;
+}
+.light .icon:hover {
+  background-color: #e9eaea;
+}
