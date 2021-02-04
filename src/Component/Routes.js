@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext} from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { NotesContext } from "../context/Notes-context";
 import NoteList from "./NotesList";
@@ -7,10 +7,6 @@ export default function Routes() {
 
   const notes = useContext(NotesContext);
 
-  useEffect(() => {
-  
-    console.log("render")
-  }, [notes])
   return (
     <Switch>
       <Route

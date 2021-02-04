@@ -12,7 +12,7 @@ import "../styles/Note.css";
 import ColorP from "./ColorP";
 import colors from "../data/Colors";
 import { ThemeContext } from "../context/Theme-context";
-const YellowCheckbox = withStyles({
+const NoteCheckbox = withStyles({
   root: {
     color: "inherit",
     width: "25px",
@@ -27,27 +27,36 @@ const YellowCheckbox = withStyles({
   checked: {},
 })((props) => <Checkbox color="default" {...props} />);
 
-function Note(props) {
-  const { title, content, id, completed, archive, delet, color } = props.note;
+function Note({note}) {
+  const { title, content, id, completed, archive, delet, color } = note;
   const elHeight = useRef(null);
   const [spanNumber, setnumber] = useState();
   const dispatch = useContext(DispatchContext);
   const { isDarkMode } = useContext(ThemeContext);
+  //Select the theme value to map the specific theme colors for the notes background into the color pallet.
+  // Colors are stored in a map object.
   const mode = isDarkMode ? 0 : 1;
+  //select the note color that corresponds to the theme selected by the user
   const noteColor = colors.get(color)[mode];
+//   Give the border the same color as the background note if the user did change it. 
+// Otherwise, stick to the defaults
   const borderColor = color !== "Default" && noteColor;
+ 
   const buttonClass = ` element icon ${
     color !== "Default" && "backGroundColored-icon"
   }`;
-  const noteCompleted = completed ? "0.5" : "1";
+
 
   useEffect(() => {
-    const height = elHeight.current.clientHeight;
-    console.log(height);
-    const spanvalue = Math.round(height / 50);
-
+    //offsetHeight to get note height  including padding, border and scrollbar.
+    // we should add the margine bottom and top + 10px for the grid gap to the element height.
+    const height = elHeight.current.offsetHeight+42;
+ 
+   // caluclate the span value for the grid-row css property
+    const spanvalue = Math.trunc(height / 50);
+   
     setnumber(spanvalue);
-  }, []);
+  }, [note]);
 
   return (
     <div
@@ -56,7 +65,7 @@ function Note(props) {
         gridRow: `span ${spanNumber}`,
         backgroundColor: noteColor,
         borderColor: borderColor,
-        opacity: noteCompleted,
+        opacity:completed ? "0.5" : "1",
       }}
       ref={elHeight}
     >
@@ -72,8 +81,8 @@ function Note(props) {
           >
             <DeleteIcon />
           </button>
-          <button className={buttonClass} aria-label="Complite Ckeckbox">
-            <YellowCheckbox
+          <button className={buttonClass} aria-label="complete Ckeckbox">
+            <NoteCheckbox
               checked={completed}
               onChange={() => dispatch({ type: "toggle", id: id })}
               name="checkedG"
@@ -83,7 +92,7 @@ function Note(props) {
             />
           </button>
           <button className={buttonClass} aria-label="Archive">
-            <YellowCheckbox
+            <NoteCheckbox
               icon={<ArchiveOutlinedIcon />}
               checkedIcon={<UnarchiveOutlinedIcon />}
               checked={archive}

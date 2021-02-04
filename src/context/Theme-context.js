@@ -3,6 +3,7 @@ import useToggle from "../hookes/useToggle";
 
 export const ThemeContext = createContext();
 export function ThemeProvider(props) {
+  // context to switch between light and dark view mode
   const [isDarkMode, changeMode] = useToggle("theme", true);
 
   return (

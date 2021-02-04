@@ -25,6 +25,7 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
+    event.preventDefault();
     if (note.title !== "" || note.content !== "") {
       dispatch({ type: "add", ...note });
     }
@@ -33,12 +34,12 @@ function CreateArea(props) {
       content: ""
     });
 
-    event.preventDefault();
+   
   }
 
   return (
     <div>
-      <form className="create-note">
+      <form  onSubmit={submitNote} className="create-note">
       
         <input
           name="title"
@@ -63,7 +64,7 @@ function CreateArea(props) {
           />
         )}
         <Zoom in={isClicked}>
-          <Fab onClick={submitNote} aria-label="add note">
+          <Fab type="submit" aria-label="add note">
             <AddIcon />
           </Fab>
         </Zoom>

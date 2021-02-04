@@ -18,8 +18,6 @@
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  height: 250px;
-  overflow-y: auto;
 }
 
 .note button {

@@ -3,6 +3,7 @@ import useToggle from "../hookes/useToggle";
 
 export const SideBarContext = createContext();
 export function SideBarContextProvider(props) {
+  //context to manage the sidebar appearance.
   const [isHide, toggleBar] = useToggle("sidebar", true);
 
   return (

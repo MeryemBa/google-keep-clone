@@ -3,7 +3,7 @@ const noteReducer = (state, action) => {
   switch (action.type) {
     case "add":
       return [
-        ...state,
+       
         {
           id: uuid(),
           title: action.title,
@@ -14,6 +14,7 @@ const noteReducer = (state, action) => {
 
           color: "Default",
         },
+        ...state,
       ];
     case "remove":
       return state.map((note) =>
