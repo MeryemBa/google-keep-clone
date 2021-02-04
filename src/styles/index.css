@@ -28,7 +28,7 @@ a:hover {
   top: 80%;
   left: 65%;
   transform: translate(-50%, 50%);
-    z-index: 84;
+  z-index: 84;
 }
 .element:hover {
   z-index: 83;
@@ -38,4 +38,25 @@ a:hover {
 
   font-size: 18px;
   position: relative;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 100%;
+}
+textarea::-webkit-scrollbar {
+  width: 5.5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(196, 195, 195);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f5ba13;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 185, 19, 0.952);
 }
