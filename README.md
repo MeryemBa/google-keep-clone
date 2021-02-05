@@ -31,8 +31,8 @@ Users of this application can benefit from the following features :
 
 ### Run
 
-1 clone this repo
-2 cd to the file and run:
+1. clone this repo
+2. cd to the file and run:
 
 ```bash
 npm install
