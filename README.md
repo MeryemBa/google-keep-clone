@@ -4,7 +4,7 @@ A Simple Google Keep App, where you can create notes, archive them, mark them as
 
 ### Demo
 
-You can find a live version of this application at the following link:[Google Keep App clone](https://mygoogle-keep-clone.netlify.app/)
+You can find a live version of this application at the following link: [Google Keep App clone](https://mygoogle-keep-clone.netlify.app/)
 
 ### Technologies Used
 
@@ -33,6 +33,6 @@ Users of this application can benefit from the following features :
 2 cd to the file and run:
 
 ```bash
-npm instal
+npm install
 npm start
 ```
